@@ -12,7 +12,7 @@ fn get_canidate_score(canidate: &Candidate) -> u32 {
 fn get_job_score(canidate: &Candidate) -> u32 {
     match &canidate.secondary_job {
         Some(secondary_job) => {
-            (get_job_code(&canidate.primary_job) * get_job_code(&secondary_job)) % 576
+            (get_job_code(&canidate.primary_job) * get_job_code(secondary_job)) % 576
         }
         None => (get_job_code(&canidate.primary_job) * get_job_code(&canidate.primary_job)) % 576,
     }
